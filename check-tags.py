@@ -9,8 +9,7 @@ def check_tags(file):
     print(md.Meta['tags'])
 
 def main():
-    files = input().split()
-    for file in files:
-        check_tags(f'{file}')
+    file = input()
+    check_tags(f'{file}')
 
 main()
