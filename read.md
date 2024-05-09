@@ -5,7 +5,7 @@ author: Sean Song
 tags: AI/ML, GenAI, Computer Vision, Multimodal, Vision-Text
 category: Applications & models
 language: English
----
+--- 
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="Interacting with Contrastive Language-Image Pre-Training (CLIP) model on AMD GPU">
