@@ -7,7 +7,7 @@ category: Applications & models
 language: English
 ---
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"> 
   <meta name="description" content="Interacting with Contrastive Language-Image Pre-Training (CLIP) model on AMD GPU">
   <meta name="keywords" content="CLIP, Contrastive learning, multimodal model, Computer vision Language-Image, Vision-Text, MI210, MI250, MI300, ROCm">
 </head>
