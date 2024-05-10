@@ -38,10 +38,6 @@ jobs:
           for FILE in $FILES; do
             if [[ $FILE == *.md ]]; then
               echo "Checking tags in $FILE"
-              ERROR=$(python3 check-tags.py <<< $FILE)
-              if [ '$ERROR' == 1 ]; then
-                echo "Error in $FILE: $ERROR"
-                exit 1
-              fi
+              python3 check-tags.py <<< $FILE
             fi
           done
