@@ -1,10 +1,13 @@
 # yaml for checking tags
 # check ONLY the file being updated ends in .md
 
-name: check-tags
+name: linting-blogs-tags
 
 on:
   pull_request:
+    paths:
+      - '**.md'
+  push:
     paths:
       - '**.md'
 
@@ -29,12 +32,18 @@ jobs:
           python3 -m pip install markdown
       - name: Check for tags
         run: |
-          ls -l
-          FILES=$(git diff --name-only -r HEAD^1 HEAD)
+          # COMMENT OUT THE FOLLOWING LINE IF YOU DON'T WANT TO CHECK ALL FILES
+          #FILES=$(git diff --name-only -r HEAD^1 HEAD)
+          FILES=$GITHUB_EVENT_PATH | grep .*\.md'
           echo $FILES
+
           for FILE in $FILES; do
             if [[ $FILE == *.md ]]; then
               echo "Checking tags in $FILE"
-              python3 check-tags.py <<< $FILE
+              ERROR=$(python3 check-tags.py <<< $FILE)
+              if [ -n "$ERROR" ]; then
+                echo "Error in $FILE: $ERROR"
+                exit 1
+              fi
             fi
           done
