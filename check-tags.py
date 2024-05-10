@@ -8,6 +8,8 @@ def check_tags(file):
     md.convert(data)
     if ('tags' in md.Meta):
         print(md.Meta['tags'])
+    else:
+        print(file + " has no tags.")
 
 def main():
     file = input()
