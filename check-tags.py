@@ -22,7 +22,7 @@ def check_tags(file):
         for tag in md_tags:
             if tag not in approved_tags:
                 print(f'{file} has an unapproved tag: {tag}. Please check the spelling or check the taglist.')
-                return
+                exit 1
             else:
                 # print(f'{file} has an approved tag: {tag}.')
                 pass
