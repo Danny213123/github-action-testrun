@@ -32,8 +32,6 @@ jobs:
           python3 -m pip install markdown
       - name: Check for tags
         run: |
-          # COMMENT OUT THE FOLLOWING LINE IF YOU DON'T WANT TO CHECK ALL FILES
-          # FILES=$(git diff --name-only -r HEAD^1 HEAD)
           FILES=$GITHUB_EVENT_PATH | grep .*\.md'
           echo $FILES
 
