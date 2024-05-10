@@ -15,20 +15,18 @@ def check_tags(file):
         approved_tags = [row['tags'] for row in approved_tags]
         approved_tags = approved_tags[0]
 
-    print(approved_tags)
+    # print(approved_tags)
 
     error = 0
     if ('tags' in md.Meta):
         md_tags = md.Meta['tags'][0].split(', ')
         for tag in md_tags:
             if tag not in approved_tags:
-                print(f'{file} has an unapproved tag: {tag}. Please check the spelling or check the taglist.')
+                # print(f'{file} has an unapproved tag: {tag}. Please check the spelling or check the taglist.')
                 error = 1
             else:
-                print(f'{file} has an approved tag: {tag}.')
+                # print(f'{file} has an approved tag: {tag}.')
         return error
-    else:
-        print(file + " has no tags.")
 
 def main():
     file = input()
