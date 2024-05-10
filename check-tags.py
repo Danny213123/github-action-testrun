@@ -26,6 +26,7 @@ def check_tags(file):
                 error = 1
             else:
                 # print(f'{file} has an approved tag: {tag}.')
+                pass
         return error
 
 def main():
