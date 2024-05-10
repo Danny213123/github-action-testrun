@@ -6,7 +6,8 @@ def check_tags(file):
     data = pathlib.Path(file).read_text(encoding='utf-8')
     md = markdown.Markdown(extensions=['meta'])
     md.convert(data)
-    print(md.Meta['tags'])
+    if ('tags' in md.Meta):
+        print(md.Meta['tags'])
 
 def main():
     file = input()
