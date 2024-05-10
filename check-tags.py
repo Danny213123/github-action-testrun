@@ -15,6 +15,8 @@ def check_tags(file):
         approved_tags = [row['tags'] for row in approved_tags]
         approved_tags = approved_tags[0]
 
+    print(approved_tags)
+
     error = 0
     if ('tags' in md.Meta):
         md_tags = md.Meta['tags'][0].split(', ')
