@@ -35,9 +35,4 @@ jobs:
           FILES=$(git ls-files | grep .md | sed 's/[^a-zA-Z0-9\/\._-]/ /g')
           echo $FILES
 
-          for FILE in $FILES; do
-            if [[ $FILE == *.md ]]; then
-              echo "Checking tags in $FILE"
-              python3 check-tags.py <<< $FILE
-            fi
-          done
+          python3 check-tags.py <<< $FILES
