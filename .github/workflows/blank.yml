@@ -36,7 +36,7 @@ jobs:
           # FILES=$(git diff --name-only -r HEAD^1 HEAD)
 
           # GRAB ONLY THE FILES THAT END IN .md IN THE ENTIRE REPO, REMOVE all non characters
-          FILES=$(find . -name "*.md" | sed 's/[^a-zA-Z0-9\/\._-]/ /g')
+          FILES=$(git ls-files --name-only | grep .md | tr -d '\r')
           echo $FILES
 
           for FILE in $FILES; do
