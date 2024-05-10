@@ -32,19 +32,6 @@ jobs:
           python3 -m pip install markdown
       - name: Check for tags
         run: |
-          FILES=$(git diff --name-only ${{ github.event.after }} ${{ github.event.before }})
-
-          for FILE in $FILES; do
-            if [[ $FILE == *.md ]]; then
-              echo "Checking tags in $FILE"
-              ERROR=$(python3 check-tags.py <<< $FILE)
-              if [ '$ERROR' == 1 ]; then
-                echo "Error in $FILE: $ERROR"
-                exit 1
-              fi
-            fi
-          done
-
           FILES=$(git ls-files | grep .md | sed 's/[^a-zA-Z0-9\/\._-]/ /g')
           echo $FILES
 
