@@ -38,6 +38,6 @@ jobs:
           for FILE in $FILES; do
             if [[ $FILE == *.md ]]; then
               echo "Checking tags in $FILE"
-              python3 check-tags.py <<< $FILE
+              echo $(python3 check-tags.py <<< $FILE)
             fi
           done
