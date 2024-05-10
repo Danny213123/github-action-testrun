@@ -17,17 +17,15 @@ def check_tags(file):
 
     # print(approved_tags)
 
-    error = 0
     if ('tags' in md.Meta):
         md_tags = md.Meta['tags'][0].split(', ')
         for tag in md_tags:
             if tag not in approved_tags:
-                # print(f'{file} has an unapproved tag: {tag}. Please check the spelling or check the taglist.')
-                error = 1
+                print(f'{file} has an unapproved tag: {tag}. Please check the spelling or check the taglist.')
+                return
             else:
                 # print(f'{file} has an approved tag: {tag}.')
                 pass
-        return error
 
 def main():
     file = input()
