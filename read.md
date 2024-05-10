@@ -2,7 +2,7 @@
 blogpost: true
 date: 16 April 2024
 author: Sean Song
-tags: AI/ML, GenAI, Computer Vision, Multimodal, Vision-Text
+tags: AI/ML, GenAI, Computer Vision, Multimodal, Vision-Text, Unapproved
 category: Applications & models
 language: English
 ---
